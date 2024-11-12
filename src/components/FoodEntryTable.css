@@ -1,0 +1,135 @@
+/* FoodEntryTable.css */
+:root {
+    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --gradient-success: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    --gradient-warning: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.food-entry-wrapper {
+    padding: 2rem;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+.main-card {
+    background: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.custom-header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+.custom-body {
+    padding: 2rem;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: #64748b;
+}
+
+.empty-state svg {
+    color: #94a3b8;
+    margin-bottom: 1rem;
+}
+
+.entry-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.entry-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.entry-date {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #64748b;
+}
+
+.entry-date svg {
+    color: #6366f1;
+}
+
+.meal-type {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.meal-badge-breakfast {
+    background: var(--gradient-warning);
+    color: white;
+}
+
+.meal-badge-lunch {
+    background: var(--gradient-success);
+    color: white;
+}
+
+.meal-badge-dinner {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.dish-card {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.dish-card:hover {
+    transform: scale(1.02);
+}
+
+.dish-card h5 {
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+}
+
+.weight-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Corrected gap property */
+}
