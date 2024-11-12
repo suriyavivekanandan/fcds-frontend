@@ -47,6 +47,15 @@ body {
   color: #fff;
 }
 
+/* Styling to handle mobile navigation toggling */
+.navbar .navbar-toggler {
+  margin-left: auto;
+}
+
+button.navbar-toggler-icon {
+  background-color: #7f2020;
+}
+
 /* Main Content Area */
 .main-content {
   flex: 1;
@@ -93,19 +102,65 @@ body {
   color: #fff;
 }
 
-/* Button Group */
-button.navbar-toggler-icon {
-  background-color: #fff;
-}
-
-/* Responsive Styling */
+/* Responsive Styling for Tablet and Below (max-width: 768px) */
 @media (max-width: 768px) {
   .navbar .nav-link {
-      font-size: 1rem;
-      padding: 10px;
+    font-size: 1rem; /* Slightly smaller font size for better fit */
+    padding: 10px;
   }
 
   .main-content {
-      padding: 15px;
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+}
+
+/* Responsive Styling for Mobile (max-width: 576px) */
+@media (max-width: 576px) {
+  .header {
+    padding: 20px 0; /* Reduce header padding */
+  }
+
+  .header h1 {
+    font-size: 1.8rem; /* Make the header title smaller on small screens */
+  }
+
+  .navbar .nav-link {
+    font-size: 0.9rem; /* Smaller font size for links */
+    padding: 8px;
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1.3rem; /* Smaller brand font size */
+  }
+
+  .main-content {
+    padding: 10px; /* Reduce padding */
+    border-radius: 5px; /* More rounded corners */
+    box-shadow: none; /* No shadow for small screens */
+  }
+
+  .footer p {
+    font-size: 0.9rem; /* Smaller footer text */
+  }
+
+  .card {
+    border-radius: 5px; /* More rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+  }
+
+  .card-title {
+    font-size: 1.2rem; /* Slightly smaller title */
+  }
+
+  .card .btn {
+    font-size: 0.9rem; /* Smaller button text */
+    padding: 8px 12px; /* Adjust padding */
+  }
+}
+
+/* Ensure proper toggle behavior for navbar on mobile */
+@media (max-width: 576px) {
+  .navbar-collapse {
+    display: block !important; /* Ensure navbar links are displayed */
   }
 }
