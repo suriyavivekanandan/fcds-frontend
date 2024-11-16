@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Righteous&family=Quicksand:wght@500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* General Styles */
 .app-container {
@@ -118,4 +121,10 @@
         padding: 0.3rem 0.7rem;
         font-size: 0.9rem;
     }
+    
+}
+.bg-dark-gradient {
+    background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
+    color: white; /* Ensure the text is visible */
+    padding: 10px; /* Optional: adds some padding */
 }
