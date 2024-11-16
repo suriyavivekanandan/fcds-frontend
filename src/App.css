@@ -1,166 +1,121 @@
-/* Global Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
-  margin: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Righteous&family=Quicksand:wght@500;700&display=swap');
 
+/* General Styles */
 .app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Quicksand', sans-serif;
 }
 
-.header {
-  background-color: #343a40;
-  padding: 40px 0;
+/* Header Styling */
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-.header h1 {
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+.header-main {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD700 50%, #4ECDC4 100%); /* Gradient matches nav links */
+    border-bottom: none !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0; /* Adds some spacing */
 }
 
-/* Navbar Styles */
-.navbar {
-  margin-bottom: 30px;
+/* Brand Name Styling */
+.brand-title {
+    font-family: 'Righteous', cursive;
+    font-size: 2.8rem; /* Slightly larger for emphasis */
+    font-weight: 700;
+    color: transparent;
+    background-image: linear-gradient(135deg, #FF6B6B, #FFD700, #4ECDC4); /* Gradient text color */
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0;
 }
 
-.navbar .nav-link {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #fff;
-  padding: 10px 20px;
+/* Navigation Links */
+.nav-links {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
-.navbar .nav-link:hover {
-  background-color: #0056b3;
-  color: #fff;
-  border-radius: 5px;
+.nav-link {
+    position: relative;
+    color: #FFD700 !important; /* Gold color */
+    padding: 0.5rem 1rem;
+    margin: 0 0.3rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-.navbar .navbar-brand {
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: #fff;
+.nav-item-home { color: #FFD700 !important; }
+.nav-item-form { color: #FF6B6B !important; }
+.nav-item-table { color: #4ECDC4 !important; }
+.nav-item-remaining { color: #96E6B3 !important; }
+.nav-item-bookings { color: #FFA07A !important; }
+
+.nav-link:hover {
+    transform: translateY(-2px);
+    color: white !important; /* White on hover */
 }
 
-/* Styling to handle mobile navigation toggling */
-.navbar .navbar-toggler {
-  margin-left: auto;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-button.navbar-toggler-icon {
-  background-color: #7f2020;
+.nav-link:hover::after {
+    width: 80%;
 }
 
-/* Main Content Area */
-.main-content {
-  flex: 1;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Search Section */
+.search-section {
+    background-color: rgba(248, 249, 250, 0.95);
+    backdrop-filter: blur(5px);
 }
 
-/* Footer */
-.footer {
-  margin-top: auto;
+.search-input {
+    border-radius: 20px;
+    border: 2px solid #E9ECEF;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
 }
 
-.footer p {
-  font-size: 1rem;
-  color: #ccc;
+.search-input:focus {
+    border-color: #6B48FF;
+    box-shadow: 0 0 0 0.2rem rgba(107, 72, 255, 0.25);
 }
 
-/* Card Styles */
-.card {
-  border-radius: 8px;
-  border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Add margin to the content to prevent it from hiding behind fixed header */
+.content-wrapper {
+    margin-top: 140px; /* Adjusted for header height */
 }
 
-.card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.card-body {
-  background-color: #f8f9fa;
-}
-
-.card .btn {
-  width: 100%;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.card .btn:hover {
-  background-color: #28a745;
-  color: #fff;
-}
-
-/* Responsive Styling for Tablet and Below (max-width: 768px) */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .navbar .nav-link {
-    font-size: 1rem; /* Slightly smaller font size for better fit */
-    padding: 10px;
-  }
-
-  .main-content {
-    padding: 15px; /* Reduce padding for smaller screens */
-  }
-}
-
-/* Responsive Styling for Mobile (max-width: 576px) */
-@media (max-width: 576px) {
-  .header {
-    padding: 20px 0; /* Reduce header padding */
-  }
-
-  .header h1 {
-    font-size: 1.8rem; /* Make the header title smaller on small screens */
-  }
-
-  .navbar .nav-link {
-    font-size: 0.9rem; /* Smaller font size for links */
-    padding: 8px;
-  }
-
-  .navbar .navbar-brand {
-    font-size: 1.3rem; /* Smaller brand font size */
-  }
-
-  .main-content {
-    padding: 10px; /* Reduce padding */
-    border-radius: 5px; /* More rounded corners */
-    box-shadow: none; /* No shadow for small screens */
-  }
-
-  .footer p {
-    font-size: 0.9rem; /* Smaller footer text */
-  }
-
-  .card {
-    border-radius: 5px; /* More rounded corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Reduced shadow */
-  }
-
-  .card-title {
-    font-size: 1.2rem; /* Slightly smaller title */
-  }
-
-  .card .btn {
-    font-size: 0.9rem; /* Smaller button text */
-    padding: 8px 12px; /* Adjust padding */
-  }
-}
-
-/* Ensure proper toggle behavior for navbar on mobile */
-@media (max-width: 576px) {
-  .navbar-collapse {
-    display: block !important; /* Ensure navbar links are displayed */
-  }
+    .content-wrapper {
+        margin-top: 160px; /* Increased margin for mobile */
+    }
+    
+    .brand-title {
+        font-size: 2rem;
+    }
+    
+    .nav-link {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.9rem;
+    }
 }
