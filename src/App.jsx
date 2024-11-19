@@ -105,23 +105,12 @@ const App = () => {
                 backgroundPosition: 'center' 
             }}>
                 <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+                    <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"> To create intelligent food menu recommendations that help users plan meals more effectively</h3>
                     <ul className="d-flex list-unstyled mt-auto">
                         <li className="me-auto">
                             <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" className="rounded-circle border border-white" />
                         </li>
-                        <li className="d-flex align-items-center me-3">
-                            <svg className="bi me-2" width="1em" height="1em">
-                                <circle cx="16" cy="16" r="16" fill="blue" />
-                            </svg>
-                            <small>Earth</small>
-                        </li>
-                        <li className="d-flex align-items-center">
-                            <svg className="bi me-2" width="1em" height="1em">
-                                <path d="M12 1C6.477 1 2 5.477 2 11s4.477 10 10 10 10-4.477 10-10S17.523 1 12 1zm0 18c-4.142 0-7.5-3.358-7.5-7.5S7.858 4 12 4s7.5 3.358 7.5 7.5S16.142 19 12 19z"/>
-                            </svg>
-                            <small>3d</small>
-                        </li>
+                       
                     </ul>
                 </div>
             </div>
@@ -134,21 +123,7 @@ const App = () => {
                 backgroundPosition: 'center' 
             }}>
                 <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h3>
-                    <ul className="d-flex list-unstyled mt-auto">
-                        <li className="d-flex align-items-center me-3">
-                            <svg className="bi me-2" width="1em" height="1em">
-                                <circle cx="16" cy="16" r="16" fill="red" />
-                            </svg>
-                            <small>Pakistan</small>
-                        </li>
-                        <li className="d-flex align-items-center">
-                            <svg className="bi me-2" width="1em" height="1em">
-                                <path d="M12 1C6.477 1 2 5.477 2 11s4.477 10 10 10 10-4.477 10-10S17.523 1 12 1zm0 18c-4.142 0-7.5-3.358-7.5-7.5S7.858 4 12 4s7.5 3.358 7.5 7.5S16.142 19 12 19z"/>
-                            </svg>
-                            <small>4d</small>
-                        </li>
-                    </ul>
+                    <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">To track and manage food consumption patterns to minimize excess and spoilage</h3>
                 </div>
             </div>
         </div>
@@ -160,21 +135,8 @@ const App = () => {
                 backgroundPosition: 'center' 
             }}>
                 <div className="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                    <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
-                    <ul className="d-flex list-unstyled mt-auto">
-                        <li className="d-flex align-items-center me-3">
-                            <svg className="bi me-2" width="1em" height="1em">
-                                <circle cx="16" cy="16" r="16" fill="green" />
-                            </svg>
-                            <small>California</small>
-                        </li>
-                        <li className="d-flex align-items-center">
-                            <svg className="bi me-2" width="1em" height="1em">
-                                <path d="M12 1C6.477 1 2 5.477 2 11s4.477 10 10 10 10-4.477 10-10S17.523 1 12 1zm0 18c-4.142 0-7.5-3.358-7.5-7.5S7.858 4 12 4s7.5 3.358 7.5 7.5S16.142 19 12 19z"/>
-                            </svg>
-                            <small>5d</small>
-                        </li>
-                    </ul>
+                    <h3 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">To educate and assist individuals and organizations in making more informed food choices, foster</h3>
+
                 </div>
             </div>
         </div>
@@ -188,12 +150,14 @@ const App = () => {
 
                 {/* Main Content Section */}
                 <div className="main-content p-4">
-                    <Routes>
-                        <Route path="/form" element={<FoodEntryForm />} />
-                        <Route path="/table" element={<FoodEntryTable />} />
-                        <Route path="/remaining" element={<RemainingFoodPage />} />
-                        <Route path="/bookings" element={<BookingTable />} />
-                    </Routes>
+                <Routes>
+   
+    <Route path="/form" element={<FoodEntryForm />} />
+    <Route path="/table" element={<FoodEntryTable />} />
+    <Route path="/remaining" element={<RemainingFoodPage />} />
+    <Route path="/bookings" element={<BookingTable />} />
+</Routes>
+
                 </div>
 
                 {/* Footer Section */}
