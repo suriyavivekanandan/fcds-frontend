@@ -43,6 +43,17 @@ const FoodEntryTable = () => {
         }
     };
 
+    // Formatting time to 12-hour format with AM/PM
+    const formatTime = (date) => {
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        return hours + ':' + minutes + ' ' + ampm;
+    };
+
     if (loading) {
         return (
             <div className="loading-container">
@@ -76,13 +87,13 @@ const FoodEntryTable = () => {
                                             <Calendar size={18} />
                                             <span>{new Date(entry.date).toLocaleDateString()}</span>
                                             <Clock size={18} />
-                                            <span>{new Date(entry.date).toLocaleTimeString()}</span>
+                                            <span>{formatTime(new Date(entry.date))}</span> {/* Updated time formatting */}
                                         </div>
                                         <Badge className={`meal-type ${getMealTypeColor(entry.mealType)}`}>
                                             {entry.mealType}
                                         </Badge>
                                     </div>
-                                    
+                                  
                                     <div className="dishes-grid">
                                         {entry.dishes.map((dish, index) => (
                                             <div key={index} className="dish-card">

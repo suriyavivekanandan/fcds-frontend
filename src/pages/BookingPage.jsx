@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './BookingTable.css'; // Add this import statement at the top of your BookingTable.jsx
+
 
 const BookingTable = () => {
     const [bookings, setBookings] = useState([]);

@@ -131,5 +131,98 @@
 .weight-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem; /* Corrected gap property */
+    gap: 0.5rem;
+}
+
+/* Mobile-first responsiveness */
+@media (max-width: 767px) {
+    /* Reduce padding and margins for smaller screens */
+    .food-entry-wrapper {
+        padding: 1rem;
+    }
+
+    .custom-body {
+        padding: 1rem;
+    }
+
+    .entry-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Stack header content for smaller screens */
+    .custom-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Adjust grid to single column for mobile screens */
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .entry-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .entry-date {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .meal-type {
+        font-size: 0.75rem;
+    }
+
+    .dish-card h5 {
+        font-size: 14px;
+    }
+
+    .weight-badges {
+        flex-direction: column;
+    }
+
+    .entry-footer {
+        text-align: center;
+    }
+
+    .empty-state h4 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .custom-header h3 {
+        font-size: 16px;
+    }
+
+    .dish-card h5 {
+        font-size: 12px;
+    }
+
+    .weight-badge {
+        font-size: 10px;
+    }
+
+    .empty-state h4 {
+        font-size: 16px;
+    }
+
+    .entry-date span {
+        font-size: 10px;
+    }
+
+    .meal-type {
+        font-size: 0.7rem;
+    }
+
+    .entry-card {
+        padding: 0.75rem;
+    }
+
+    .entry-header {
+        font-size: 14px;
+    }
 }

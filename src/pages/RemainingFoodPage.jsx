@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Package2, Clock } from "lucide-react";
 import { Container, Row, Col, Card, Button, Form, Table, ButtonGroup, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { format } from 'date-fns'; // Import date-fns for formatting
 
 const RemainingFoodPage = () => {
     const [remainingDishes, setRemainingDishes] = useState([]);
@@ -12,6 +13,15 @@ const RemainingFoodPage = () => {
         dishName: ''
     });
     const [viewMode, setViewMode] = useState('grid');
+
+    // Function to format the date using date-fns
+    const formatDate = (date) => {
+        try {
+            return format(new Date(date), 'PPpp'); // 'PPpp' gives full date with time
+        } catch (error) {
+            return "Invalid Date";
+        }
+    };
 
     const fetchRemainingDishes = async () => {
         try {
@@ -132,7 +142,7 @@ const RemainingFoodPage = () => {
                                         </div>
                                         <div className="d-flex align-items-center gap-2">
                                             <Clock size={16} />
-                                            <span>{new Date(dish.createdAt).toLocaleString()}</span>
+                                            <span>{formatDate(dish.createdAt)}</span> {/* Use the formatDate function */}
                                         </div>
                                     </div>
                                     <OverlayTrigger
@@ -146,7 +156,7 @@ const RemainingFoodPage = () => {
                                                 ...prevState,
                                                 dishId: dish._id,
                                                 dishName: dish.name,
-                                            }))}
+                                            }))} 
                                         >
                                             Book Now
                                         </Button>
@@ -175,7 +185,7 @@ const RemainingFoodPage = () => {
                                         <tr key={dish._id}>
                                             <td>{dish.name}</td>
                                             <td>{dish.remainingWeight}g</td>
-                                            <td>{new Date(dish.createdAt).toLocaleString()}</td>
+                                            <td>{formatDate(dish.createdAt)}</td> {/* Use the formatDate function */}
                                             <td>
                                                 <OverlayTrigger
                                                     placement="top"
@@ -188,7 +198,7 @@ const RemainingFoodPage = () => {
                                                             ...prevState,
                                                             dishId: dish._id,
                                                             dishName: dish.name,
-                                                        }))}
+                                                        }))} 
                                                     >
                                                         Book Now
                                                     </Button>

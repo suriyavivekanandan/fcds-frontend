@@ -1,35 +1,105 @@
-/* BookingTable.css */
+/* General Table Styles */
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f8f9fa;
+  background-color: #f8f9fa;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.table-success {
+  --bs-table-bg: #d1e7dd;
+  --bs-table-striped-bg: #c7dbd2;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #bcd0c7;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #c1d6cc;
+  --bs-table-hover-color: #000;
+  color: #000;
+  border-color: #b9d2c1;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 767px) {
+  .card-body {
+      padding: 1rem;
   }
-  
-  .table-hover tbody tr:hover {
-    background-color: #e9ecef;
-  }
-  
-  .table-success {
-    --bs-table-bg: #d1e7dd;
-    --bs-table-striped-bg: #c7dbd2;
-    --bs-table-striped-color: #000;
-    --bs-table-active-bg: #bcd0c7;
-    --bs-table-active-color: #000;
-    --bs-table-hover-bg: #c1d6cc;
-    --bs-table-hover-color: #000;
-    color: #000;
-    border-color: #b9d2c1;
-  }
-  
-  .card {
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  }
-  
+
   .card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
+      font-size: 1.25rem;
   }
-  
-  .container {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+
+  .table th,
+  .table td {
+      padding: 0.75rem;
+      font-size: 14px;
   }
+
+  /* Stack table columns into a readable format for smaller screens */
+  .table th,
+  .table td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+  }
+
+  .table th {
+      background-color: #f0fdf4;
+      font-weight: bold;
+      padding-top: 1rem;
+  }
+
+  .table td {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-top: 1px solid #ddd;
+  }
+
+  .table tr {
+      margin-bottom: 1rem;
+      display: block;
+      background-color: white;
+      border-radius: 8px;
+  }
+
+  .table td:first-child {
+      font-weight: bold;
+      color: #6366f1;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-title {
+      font-size: 1.1rem;
+  }
+
+  .table th,
+  .table td {
+      padding: 0.5rem;
+      font-size: 12px;
+  }
+
+  .table td {
+      font-size: 12px;
+  }
+
+  .table th {
+      font-size: 12px;
+  }
+}
